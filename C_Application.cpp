@@ -3,6 +3,7 @@
 #include "graphics.h"
 #include "time.h"
 #include "Projectile.h"
+#include "C_Clock.h"
 #include "C_Application.h"
 
 static const float k_PI = 3.1415926536f;
@@ -29,11 +30,9 @@ void C_Application::Tick(T_PressedKey pressedKeys)
 	// Sample tick
 
 	// Clear screen on cannon position
-
 	FillRect(m_CannonX - 30, m_CannonY - 1, 61, 42, GetRGB(0, 0, 0));
 
 	// Key processing
-
 	if(pressedKeys & s_KeyLeft)
 	{
 		m_CannonAngle = min((3 * k_PI) / 2, m_CannonAngle + 0.07);
@@ -66,6 +65,13 @@ void C_Application::Tick(T_PressedKey pressedKeys)
 		}
 	}
 	m_Projectiles = tempProjectiles;
+
+	C_Clock clock(m_ScreenWidth / 2, m_ScreenHeight / 2, 100, 2, 2);
+
+	clock.ClearPosition();
+	clock.DisplayClock();
+	clock.DisplayTime();
+	clock.Move(m_ScreenWidth, m_ScreenHeight);
 
 	// Draw cannon
 	DrawLine(m_CannonX - 10 * cos(k_PI + m_CannonAngle),

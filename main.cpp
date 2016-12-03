@@ -4,7 +4,6 @@
 #undef UNICODE
 #include <windows.h>
 
-#include "C_Clock.h"
 #include "C_Application.h"
 
 
@@ -84,7 +83,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	
 	{
 		C_Application app(k_ScreenWidth, k_ScreenHeight);
-		C_Clock clock(k_ScreenWidth/2, k_ScreenHeight /2, 100, 2, 2);
 		DWORD lastTime = timeGetTime();
 		
 		// Main game loop
@@ -117,12 +115,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				DispatchMessage(&msg);
 			}
 
-
 			app.Tick(g_PressedKeys);
-			clock.ClearPosition();
-			clock.DisplayClock();
-			clock.DisplayTime();
-			clock.Move(k_ScreenWidth, k_ScreenHeight);
+			
 
 		}
 	}
