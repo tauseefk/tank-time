@@ -1,10 +1,10 @@
 #include <math.h>
 #include "graphics.h"
-#include "Projectile.h"
+#include "C_Projectile.h"
 
 static const float k_PI = 3.1415926536f;
 
-Projectile::Projectile(float m_ProjectileX, float m_ProjectileY, int screenWidth, int screenHeight, float m_ProjectileSpeed, float m_ProjectileAngle)
+C_Projectile::C_Projectile(float m_ProjectileX, float m_ProjectileY, int screenWidth, int screenHeight, float m_ProjectileSpeed, float m_ProjectileAngle)
 	: m_ProjectileX(m_ProjectileX)
 	, m_ProjectileY(m_ProjectileY)
 	, m_ProjectileSpeed(m_ProjectileSpeed)
@@ -14,11 +14,11 @@ Projectile::Projectile(float m_ProjectileX, float m_ProjectileY, int screenWidth
 {
 }
 
-Projectile::~Projectile()
+C_Projectile::~C_Projectile()
 {
 }
 
-void Projectile::Move() {
+void C_Projectile::Move() {
 	FillRect(m_ProjectileX - 1, m_ProjectileY - 1, 5, 5, GetRGB(0, 0, 0));
 	m_ProjectileX += m_ProjectileSpeed * sin(m_ProjectileAngle);
 	m_ProjectileY += m_ProjectileSpeed * cos(m_ProjectileAngle);

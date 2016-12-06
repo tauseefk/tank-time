@@ -3,11 +3,11 @@
 
 #include "graphics.h"
 
-class Projectile
+class C_Projectile
 {
 public:
-	Projectile(float m_ProjectileX, float m_ProjectileY, int screenWidth, int screenHeight, float m_ProjectileSpeed, float m_ProjectileAngle);
-	~Projectile();
+	C_Projectile(float m_ProjectileX, float m_ProjectileY, int screenWidth, int screenHeight, float m_ProjectileSpeed, float m_ProjectileAngle);
+	~C_Projectile();
 
 	void Move();
 
