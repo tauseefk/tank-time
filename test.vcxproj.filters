@@ -19,21 +19,21 @@
     <ClCompile Include="C_Clock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Projectile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="lib\graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lib\time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C_Projectile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C_Clock.h" />
     <ClInclude Include="C_Application.h" />
-    <ClInclude Include="Projectile.h" />
     <ClInclude Include="lib\graphics.h" />
     <ClInclude Include="lib\time.h" />
+    <ClInclude Include="C_Projectile.h" />
   </ItemGroup>
 </Project>

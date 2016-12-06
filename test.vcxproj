@@ -89,18 +89,18 @@
   <ItemGroup>
     <ClCompile Include="C_Application.cpp" />
     <ClCompile Include="C_Clock.cpp" />
+    <ClCompile Include="C_Projectile.cpp" />
     <ClCompile Include="lib\graphics.cpp" />
     <ClCompile Include="lib\time.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C_Application.h" />
     <ClInclude Include="C_Clock.h" />
+    <ClInclude Include="C_Projectile.h" />
     <ClInclude Include="lib\graphics.h" />
     <ClInclude Include="lib\time.h" />
-    <ClInclude Include="Projectile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

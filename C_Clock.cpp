@@ -80,3 +80,25 @@ void C_Clock::ClearPosition() {
 
 	FillRect(m_ClockX - 2, m_ClockY - 2, m_ClockDefSize + 5, m_ClockDefSize + 5, GetRGB(0, 0, 0));
 }
+
+void C_Clock::ChangeDirection(char axis) {
+	if (axis == 'x') {
+		m_ClockVelocityX = 0 - m_ClockVelocityX;
+	}
+	else if (axis == 'y') {
+		m_ClockVelocityY = 0 - m_ClockVelocityY;
+	}
+}
+
+float C_Clock::GetClockCenter(char axis) {
+	if (axis == 'x') {
+		return this->m_ClockX + m_ClockDefSize / 2;
+	}
+	else if (axis == 'y') {
+		return this->m_ClockY + m_ClockDefSize / 2;
+	}
+}
+
+float C_Clock::GetClockSize() {
+	return this->m_ClockDefSize;
+}

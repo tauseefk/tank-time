@@ -2,6 +2,8 @@
 #define TEST_C_APPLICATION_H
 
 #include <list>
+#include "C_Projectile.h"
+#include "C_Clock.h"
 
 class C_Application
 {
@@ -14,6 +16,8 @@ public:
 
 	/// Tick is called on fix framerate (50fps)
 	void Tick(T_PressedKey pressedKeys);
+
+	void DrawCannon(float cannonX, float cannonY, float cannonAngle, float cannonHeight, float cannonWidth);
 
 	static const T_PressedKey s_KeyLeft  = 0x01;
 	static const T_PressedKey s_KeyUp    = 0x02;
@@ -30,8 +34,12 @@ private:
 	int			m_CannonX;
 	int			m_CannonY;
 	float		m_CannonAngle;
-	std::list<Projectile*> m_Projectiles;
-
+	float		m_RotationAngle;
+	float		m_CannonHeight;
+	float		m_CannonWidth;
+	
+	std::list<C_Projectile*> m_Projectiles;
+	std::list<C_Clock*> m_Clocks;
 
 };
 
