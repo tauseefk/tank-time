@@ -6,7 +6,7 @@
 #include <windows.h>
 
 
-//get pixel color value from rgb components
+//get pixel color value from rgb component
 inline unsigned int GetRGB(unsigned int r, unsigned int g, unsigned int b)
 {
 	return r + (g<<8) + (b<<16);
