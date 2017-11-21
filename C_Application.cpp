@@ -73,29 +73,13 @@ void C_Application::Tick(T_PressedKey pressedKeys)
 		clockVelocityX = 2,
 		clockVelocityY = 2;
 
-	if (m_Clocks.size() == 2) {
-		m_Clocks.push_back(new C_Clock(m_ScreenWidth / 2, m_ScreenHeight / 2,
-			clockSize, clockVelocityX, clockVelocityY));
+	C_Clocks* c = new C_Clock(m_ScreenWidth / 2, m_ScreenHeight / 2,
+			clockSize, clockVelocityX, clockVelocityY) if (m_Clocks.size() == 2);
 
-		m_Clocks.push_back(new C_Clock((m_ScreenWidth / 2) - clockSize,
-			m_ScreenHeight / 2, clockSize, clockVelocityX, clockVelocityY));
-	}
-
-	std::list<C_Clock*> tempClocks;
-	tempClocks = m_Clocks;
-	for each(C_Clock* c in m_Clocks) {
-		for each(C_Clock* other in tempClocks) {
-			if (c->GetClockCenter('x') != other->GetClockCenter('x') && c->GetClockCenter('y') != other->GetClockCenter('y')) {
-				if (c->GetClockCenter('x') != other->GetClockCenter('x')) {
-
-				}
-			}
-		}
-		c->ClearPosition();
-		c->DisplayClock();
-		c->DisplayTime();
-		c->Move(m_ScreenWidth, m_ScreenHeight);
-	}
+	c->ClearPosition();
+	c->DisplayClock();
+	c->DisplayTime();
+	c->Move(m_ScreenWidth, m_ScreenHeight);
 
 
 
