@@ -14,7 +14,7 @@ public:
 
 	void DisplayClock();
 
-	void TimeToAngle(char unit, int value, float &angle);
+	void TimeToAngle(const char* unit, int value, float &angle);
 
 	void DisplayTime();
 

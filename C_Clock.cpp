@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 #include "graphics.h"
 #include "C_Clock.h"
 #include "time.h"
@@ -42,9 +43,10 @@ void C_Clock::DisplayClock() {
 	DrawLine(m_ClockX + m_ClockDefSize, m_ClockY, m_ClockX + m_ClockDefSize, m_ClockY + m_ClockDefSize, GetRGB(255, 0, 0));
 }
 
-void C_Clock::TimeToAngle(char unit, int value, float &angle) {
+void C_Clock::TimeToAngle(const char* unit, int value, float &angle) {
 	if (unit == "h") {
 		angle = (value % 12) * 30 * k_PI / 180;
+		std::cout << angle;
 	}
 	else {
 		angle = value * 6 * k_PI / 180;
