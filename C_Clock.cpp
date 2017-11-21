@@ -42,8 +42,8 @@ void C_Clock::DisplayClock() {
 	DrawLine(m_ClockX + m_ClockDefSize, m_ClockY, m_ClockX + m_ClockDefSize, m_ClockY + m_ClockDefSize, GetRGB(255, 0, 0));
 }
 
-void C_Clock::TimeToAngle(std::string unit, int value, float &angle) {
-	if (unit == "hr") {
+void C_Clock::TimeToAngle(char unit, int value, float &angle) {
+	if (unit == "h") {
 		angle = (value % 12) * 30 * k_PI / 180;
 	}
 	else {
@@ -65,9 +65,9 @@ void C_Clock::DisplayTime() {
 	int clockCenterX = m_ClockX + m_ClockDefSize / 2,
 		clockCenterY = m_ClockY + m_ClockDefSize / 2;
 	
-	TimeToAngle("hr", hr, angleSubHr);
-	TimeToAngle("min", min, angleSubMin);
-	TimeToAngle("sec", sec, angleSubSec);
+	TimeToAngle("h", hr, angleSubHr);
+	TimeToAngle("m", min, angleSubMin);
+	TimeToAngle("s", sec, angleSubSec);
 
 	// Draw clock hands
 	DrawLine(clockCenterX, clockCenterY, clockCenterX + 30 * sin(angleSubHr), clockCenterY - 30 * cos(angleSubHr), GetRGB(255, 0, 0));
