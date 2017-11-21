@@ -44,7 +44,7 @@ void C_Clock::DisplayClock() {
 }
 
 void C_Clock::TimeToAngle(const char* unit, int value, float &angle) {
-	if (unit == "h") {
+	if (unit == "p") {
 		angle = (value % 12) * 30 * k_PI / 180;
 		std::cout << angle;
 	}
@@ -69,6 +69,8 @@ void C_Clock::DisplayTime() {
 	
 	TimeToAngle("h", hr, angleSubHr);
 	TimeToAngle("m", min, angleSubMin);
+	// To move Hour hand beyond the absolute hour
+	angleSubHr += (min) * 6 * k_PI / 180;
 	TimeToAngle("s", sec, angleSubSec);
 
 	// Draw clock hands

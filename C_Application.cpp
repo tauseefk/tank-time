@@ -33,7 +33,7 @@ void C_Application::Tick(T_PressedKey pressedKeys)
 	// Sample tick
 
 	// Clear screen on cannon position
-	//FillRect(m_CannonX - m_CannonHeight, m_CannonY - 1, 2 * m_CannonHeight + 1, 2 * m_CannonWidth + 2, GetRGB(0, 0, 0));
+	FillRect(m_CannonX - m_CannonHeight, m_CannonY - 1, 2 * m_CannonHeight + 1, 2 * m_CannonWidth + 2, GetRGB(0, 0, 0));
 
 	// Key processing
 	if(pressedKeys & s_KeyLeft)
@@ -70,8 +70,8 @@ void C_Application::Tick(T_PressedKey pressedKeys)
 	m_Projectiles = tempProjectiles;
 
 	float clockSize = 100,
-		clockVelocityX = 2,
-		clockVelocityY = 2;
+		clockVelocityX = 20,
+		clockVelocityY = 20;
 
 	C_Clock* c = new C_Clock(m_ScreenWidth / 2, m_ScreenHeight / 2,
 		clockSize, clockVelocityX, clockVelocityY);
@@ -80,8 +80,6 @@ void C_Application::Tick(T_PressedKey pressedKeys)
 	c->DisplayClock();
 	c->DisplayTime();
 	c->Move(m_ScreenWidth, m_ScreenHeight);
-
-
 
 	// Draw cannon
 	DrawCannon(m_CannonX, m_CannonY, m_CannonAngle, m_CannonHeight, m_CannonWidth);
