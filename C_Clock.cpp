@@ -43,7 +43,7 @@ void C_Clock::DisplayClock() {
 }
 
 void C_Clock::TimeToAngle(std::string unit, int value, float &angle) {
-	if (unit == "HOUR") {
+	if (unit == "hr") {
 		angle = (value % 12) * 30 * k_PI / 180;
 	}
 	else {
